@@ -37,6 +37,12 @@ cookie (valid 30 days, bound to that authority), after which
 use the host port from `ports:` when opening it. The first time the team opens,
 DS Bot creates a Main Bot called Chief.
 
+Treat that log line as a password. Anyone who reads it can open the UI as
+you until the cookie it mints expires, and the Bots in this image run with
+full access and no approval prompts (see [Permissions](#permissions)). Do
+not ship the container logs anywhere public, and prefer a reverse proxy
+with HTTPS in front (see [Network](#network)).
+
 An alternative for users who prefer `.env` is still available in `docker/`:
 
 ```sh
