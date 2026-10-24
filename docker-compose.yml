@@ -11,6 +11,10 @@ services:
       dockerfile: docker/Dockerfile
       args:
         NPM_REGISTRY: https://registry.npmjs.org/
+    # Publishes on every interface of the host. On a shared network, bind one
+    # address instead (for example "127.0.0.1:13080:3080") or front it with a
+    # reverse proxy; anyone who reaches the UI and has the login token from
+    # the container log controls Bots that run with full access.
     ports:
       - "0.0.0.0:13080:3080"
     environment:
